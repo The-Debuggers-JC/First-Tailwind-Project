@@ -1,1 +1,59 @@
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap");
+
+html {
+  width: 100%;
+  height: auto;
+  font-family: "Syne" !important;
+}
+@layer components {
+  .navbar-container {
+    max-width: 100%;
+    list-style-type: none;
+    align-items: center;
+    margin: 0 50px;
+    padding: 25px;
+    overflow: hidden;
+    display: flex;
+  }
+  .navbar-logo {
+    padding: 14px 14px;
+    margin: auto;
+    margin-left: 14px;
+    margin-right: 725px;
+    width: 110px;
+    cursor: pointer;
+  }
+  .navbar-links li {
+    float: left;
+    margin: 0 12px;
+  }
+  .navbar-links li a {
+    display: block;
+    color: #77777d;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    padding: 14px 0px;
+    text-decoration: none;
+    position: relative;
+  }
+  .navbar-links a::after {
+    content: "";
+    height: 2px;
+    width: 100%;
+    background: black;
+    position: absolute;
+    left: 0;
+    bottom: 4px;
+    opacity: 0;
+    transition: all 0.2s;
+    pointer-events: none;
+  }
+  .navbar-links a:hover {
+    color: black;
+  }
+  .navbar-links a:hover::after {
+    opacity: 1;
+  }
+}
