@@ -2,58 +2,34 @@
 @import url("https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap");
 
 html {
-  width: 100%;
-  height: auto;
-  font-family: "Syne" !important;
+  @apply w-full h-auto;
+}
+.syne-font {
+  font-family: "Syne", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
 @layer components {
   .navbar-container {
-    max-width: 100%;
-    list-style-type: none;
-    align-items: center;
-    margin: 0 50px;
-    padding: 25px;
-    overflow: hidden;
-    display: flex;
+    @apply max-w-full list-none items-center mt-[0] mb-[0] ml-[50px] mr-[50px] p-[25px] overflow-hidden flex;
   }
   .navbar-logo {
-    padding: 14px 14px;
-    margin: auto;
-    margin-left: 14px;
-    margin-right: 725px;
-    width: 110px;
-    cursor: pointer;
+    @apply p-[14px] my-auto ml-[14px] mr-[725px] w-[110px] cursor-pointer;
   }
   .navbar-links li {
-    float: left;
-    margin: 0 12px;
+    @apply float-left my-0 mx-[12px];
   }
   .navbar-links li a {
-    display: block;
-    color: #77777d;
-    font-size: 16px;
-    font-weight: 400;
-    text-align: center;
-    padding: 14px 0px;
-    text-decoration: none;
-    position: relative;
+    @apply block text-gray-400 text-[16px] font-normal text-center py-[14px] px-0 relative;
   }
   .navbar-links a::after {
-    content: "";
-    height: 2px;
-    width: 100%;
-    background: black;
-    position: absolute;
-    left: 0;
-    bottom: 4px;
-    opacity: 0;
-    transition: all 0.2s;
-    pointer-events: none;
+    @apply content-[""] h-[2px] w-full bg-black absolute inset-x-0 bottom-[4px] opacity-0 transition-all delay-[0.2ms] pointer-events-none;
   }
   .navbar-links a:hover {
-    color: black;
+    @apply text-stone-950;
   }
   .navbar-links a:hover::after {
-    opacity: 1;
+    @apply opacity-100;
   }
 }
