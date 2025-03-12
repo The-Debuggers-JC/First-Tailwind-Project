@@ -15,7 +15,7 @@ html {
     @apply max-w-full list-none items-center my-[0] mx-[50px] p-[25px] overflow-hidden flex justify-between;
   }
   .navbar-logo {
-    @apply p-[14px] my-auto ml-[14px] mr-[725px] w-[110px] cursor-pointer;
+    @apply p-[14px] my-auto w-[110px] cursor-pointer;
   }
   .navbar-links li {
     @apply float-left my-0 mx-[12px];
