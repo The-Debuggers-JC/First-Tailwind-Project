@@ -1,4 +1,4 @@
-/*! tailwindcss v4.0.12 | MIT License | https://tailwindcss.com */
+/*! tailwindcss v4.0.13 | MIT License | https://tailwindcss.com */
 @layer theme, base, components, utilities;
 @layer theme {
   :root, :host {
@@ -7,7 +7,6 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-gray-400: oklch(0.707 0.022 261.325);
-    --color-stone-950: oklch(0.147 0.004 49.25);
     --color-black: #000;
     --spacing: 0.25rem;
     --font-weight-normal: 400;
@@ -215,28 +214,61 @@ html {
     --tw-font-weight: var(--font-weight-normal);
     font-weight: var(--font-weight-normal);
     color: var(--color-gray-400);
-  }
-  .navbar-links a::after {
-    pointer-events: none;
-    position: absolute;
-    inset-inline: calc(var(--spacing) * 0);
-    bottom: 4px;
-    height: 2px;
-    width: 100%;
-    background-color: var(--color-black);
-    opacity: 0%;
-    transition-property: all;
-    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
-    transition-duration: var(--tw-duration, var(--default-transition-duration));
-    transition-delay: 0.2ms;
-    --tw-content: "";
-    content: var(--tw-content);
-  }
-  .navbar-links a:hover {
-    color: var(--color-stone-950);
-  }
-  .navbar-links a:hover::after {
-    opacity: 100%;
+    &::after {
+      content: var(--tw-content);
+      pointer-events: none;
+    }
+    &::after {
+      content: var(--tw-content);
+      position: absolute;
+    }
+    &::after {
+      content: var(--tw-content);
+      inset-inline: calc(var(--spacing) * 0);
+    }
+    &::after {
+      content: var(--tw-content);
+      bottom: 4px;
+    }
+    &::after {
+      content: var(--tw-content);
+      height: 2px;
+    }
+    &::after {
+      content: var(--tw-content);
+      width: 100%;
+    }
+    &::after {
+      content: var(--tw-content);
+      background-color: var(--color-black);
+    }
+    &::after {
+      content: var(--tw-content);
+      opacity: 0%;
+    }
+    &::after {
+      content: var(--tw-content);
+      transition-property: all;
+      transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+      transition-duration: var(--tw-duration, var(--default-transition-duration));
+    }
+    &::after {
+      content: var(--tw-content);
+      transition-delay: 0.2ms;
+    }
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-black);
+      }
+    }
+    &:hover {
+      @media (hover: hover) {
+        &::after {
+          content: var(--tw-content);
+          opacity: 100%;
+        }
+      }
+    }
   }
 }
 @property --tw-font-weight {
@@ -245,6 +277,6 @@ html {
 }
 @property --tw-content {
   syntax: "*";
-  inherits: false;
   initial-value: "";
+  inherits: false;
 }
