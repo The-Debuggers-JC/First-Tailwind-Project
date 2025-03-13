@@ -13,6 +13,7 @@
     --color-black: #000;
     --spacing: 0.25rem;
     --font-weight-normal: 400;
+    --font-weight-medium: 500;
     --radius-2xl: 1rem;
     --default-transition-duration: 150ms;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -28,6 +29,7 @@
     --default-mono-font-variation-settings: var(
       --font-mono--font-variation-settings
     );
+    --color-gray-theme: #e6eaee;
   }
 }
 @layer base {
@@ -290,6 +292,8 @@ html {
   }
   .banner-container p {
     font-size: 80px;
+    --tw-font-weight: var(--font-weight-medium);
+    font-weight: var(--font-weight-medium);
   }
   .banner-container p span {
     color: transparent;
@@ -298,7 +302,7 @@ html {
   .banner-job {
     margin-top: 10px;
     display: inline-block;
-    background-color: #E6EAEE;
+    background-color: var(--color-gray-theme);
     padding: 15px;
   }
   .banner-job div span {
