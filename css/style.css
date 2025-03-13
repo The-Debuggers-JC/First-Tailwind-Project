@@ -11,7 +11,6 @@
     --color-gray-400: oklch(0.707 0.022 261.325);
     --color-gray-500: oklch(0.551 0.027 264.364);
     --color-black: #000;
-    --color-white: #fff;
     --spacing: 0.25rem;
     --font-weight-normal: 400;
     --radius-2xl: 1rem;
@@ -299,7 +298,7 @@ html {
   .banner-job {
     margin-top: 10px;
     display: inline-block;
-    background-color: var(--color-white);
+    background-color: #E6EAEE;
     padding: 15px;
   }
   .banner-job div span {

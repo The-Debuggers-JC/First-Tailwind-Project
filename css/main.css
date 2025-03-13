@@ -34,7 +34,7 @@ html {
     -webkit-text-stroke: 1px black;
   }
   .banner-job {
-    @apply inline-block  bg-white p-[15px] mt-[10px];
+    @apply inline-block  bg-[#E6EAEE] p-[15px] mt-[10px];
   }
   .banner-job div span {
     @apply text-gray-500 relative inline-block pr-[15px] mr-[10px] first:ml-[20px];
