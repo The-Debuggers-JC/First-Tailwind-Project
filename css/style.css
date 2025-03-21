@@ -183,8 +183,10 @@ html {
   font-style: normal;
 }
 @layer components {
+  .page-container {
+    margin-inline: 90px;
+  }
   .navbar-container {
-    margin-inline: 50px;
     margin-block: 0;
     display: flex;
     max-width: 100%;
@@ -192,18 +194,18 @@ html {
     align-items: center;
     justify-content: space-between;
     overflow: hidden;
-    padding: 25px;
+    padding-block: 25px;
   }
   .navbar-logo {
     margin-block: auto;
     width: 110px;
     cursor: pointer;
-    padding: 14px;
+    padding-block: 14px;
   }
   .navbar-links li {
     float: left;
-    margin-inline: 12px;
     margin-block: calc(var(--spacing) * 0);
+    margin-left: 24px;
   }
   .navbar-links li a {
     position: relative;
@@ -272,7 +274,6 @@ html {
     }
   }
   .banner-container {
-    margin-inline: 90px;
     margin-block: calc(var(--spacing) * 0);
     display: flex;
     height: 480px;
@@ -349,7 +350,6 @@ html {
     }
   }
   .intro-container {
-    margin-inline: 90px;
     display: flex;
     height: 500px;
     flex-direction: row;
@@ -529,13 +529,14 @@ html {
   animation: 2s ease 0s infinite normal none running pulse-animation;
 }
 .circle {
-  width: 8px;
   height: 8px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px 1px;
-  border-radius: 50%;
+  width: 8px;
+  border-radius: var(--radius-2xl);
+  --tw-shadow: 0 0 1px 1px var(--tw-shadow-color, rgba(0,0,0,0.1));
+  box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
 }
 .color-pulse {
-  background: rgb(0, 255, 0);
+  background-color: #00FF00;
 }
 @property --tw-font-weight {
   syntax: "*";
@@ -555,4 +556,59 @@ html {
   syntax: "*";
   inherits: false;
   initial-value: solid;
+}
+@property --tw-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-inset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-inset-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ring-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-inset-ring-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-inset-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-ring-inset {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ring-offset-width {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+@property --tw-ring-offset-color {
+  syntax: "*";
+  inherits: false;
+  initial-value: #fff;
+}
+@property --tw-ring-offset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
 }

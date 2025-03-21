@@ -15,20 +15,23 @@ html {
   --color-gray-theme: #e6eaee;
 }
 @layer components {
+  .page-container {
+    @apply mx-[90px];
+  }
   .navbar-container {
-    @apply max-w-full list-none items-center my-[0] mx-[50px] p-[25px] overflow-hidden flex justify-between;
+    @apply max-w-full list-none items-center my-[0] py-[25px] overflow-hidden flex justify-between;
   }
   .navbar-logo {
-    @apply p-[14px] my-auto w-[110px] cursor-pointer;
+    @apply py-[14px] my-auto w-[110px] cursor-pointer;
   }
   .navbar-links li {
-    @apply float-left my-0 mx-[12px];
+    @apply float-left my-0 ml-[24px];
   }
   .navbar-links li a {
     @apply block text-gray-400 text-[16px] font-normal text-center py-[14px] px-0 relative hover:text-black after:h-[2px] after:w-full after:bg-black after:absolute after:inset-x-0 after:bottom-[4px] after:opacity-0 after:transition-all after:delay-[0.2ms] after:pointer-events-none hover:after:opacity-100;
   }
   .banner-container {
-    @apply h-[480px] max-w-full justify-center items-center flex bg-gray-theme my-0 mx-[90px] flex-col rounded-2xl;
+    @apply h-[480px] max-w-full justify-center items-center flex bg-gray-theme my-0 flex-col rounded-2xl;
   }
   .banner-container p {
     @apply text-[80px] font-medium;
@@ -47,7 +50,7 @@ html {
     @apply after:absolute after:top-[10px] after:inset-y-0 after:right-0 after:w-[6px] after:h-[6px] after:bg-gray-300 after:rounded-full last:m-0 last:p-0;
   }
   .intro-container {
-    @apply flex flex-row mx-[90px] h-[500px] py-[100px];
+    @apply flex flex-row h-[500px] py-[100px];
   }
   .intro-namecard {
     @apply w-[475px] h-[650px] outline outline-gray-theme rounded-2xl flex flex-col items-center [&>.child]:text-[30px] [&>.child]:font-medium;
@@ -94,10 +97,10 @@ html {
 }
 @keyframes pulse-animation {
   0% {
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px;
+    @apply shadow-[0_0_rgba(0,0,0,0.2)];
   }
   100% {
-    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 20px;
+    @apply shadow-[0_0_0_20px_rgba(0,0,0,0)];
   }
 }
 
@@ -109,12 +112,9 @@ html {
 }
 
 .circle {
-  width: 8px;
-  height: 8px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px 1px;
-  border-radius: 50%;
+  @apply w-[8px] h-[8px] rounded-2xl shadow-[0_0_1px_1px_rgba(0,0,0,0.1)];
 }
 
 .color-pulse {
-  background: rgb(0, 255, 0);
+  @apply bg-[#00FF00];
 }
