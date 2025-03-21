@@ -46,4 +46,75 @@ html {
   .job-dot {
     @apply after:absolute after:top-[10px] after:inset-y-0 after:right-0 after:w-[6px] after:h-[6px] after:bg-gray-300 after:rounded-full last:m-0 last:p-0;
   }
+  .intro-container {
+    @apply flex flex-row mx-[90px] h-[500px] py-[100px];
+  }
+  .intro-namecard {
+    @apply w-[475px] h-[650px] outline outline-gray-theme rounded-2xl flex flex-col items-center [&>.child]:text-[30px] [&>.child]:font-medium;
+  }
+  .kane-img {
+    @apply w-[400px] h-[400px] block rounded-2xl bg-cover mt-[40px] mx-[40px] mb-[20px] bg-[url(https://kane-portfolio-react.vercel.app/assets/profile-B9KxBwnD.jpg)];
+  }
+  .online-stat {
+    @apply box-border border border-gray-theme rounded-3xl py-[5px] px-[15px] [&>.available-text]:text-gray-600 inline-flex items-center justify-around w-[200px];
+  }
+  .intro-links {
+    @apply flex mt-[20px];
+  }
+  .intro-links li {
+    @apply w-[45px] h-[45px] mx-[12px] px-[12px] py-[10px] border border-gray-theme cursor-pointer;
+  }
+  .intro-links a {
+    @apply flex justify-center items-center;
+  }
+  .intro-links li a p svg {
+    @apply w-[20px] h-[20px] fill-current fill-gray-500 group-hover:fill-black transition-[0.5s];
+  }
+  .intro-cv {
+    @apply flex flex-col ml-[30px];
+  }
+  .intro-intro {
+    @apply mt-[60px] w-[725px] text-[55px]/[72px] font-medium;
+  }
+  .intro-intro span {
+    @apply outline outline-gray-theme px-4;
+  }
+  .cv-button {
+    @apply outline outline-gray-theme mt-[25px] w-[175px] py-[20px] flex justify-center items-center bg-black cursor-pointer hover:bg-white [&>p]:text-white [&>svg]:fill-white [&>svg]:ml-[10px] [&>p]:group-hover:text-black [&>svg]:group-hover:fill-black transition-[0.3ms];
+  }
+  .intro-skills {
+    @apply flex flex-wrap w-[750px] mt-[30px];
+  }
+  .intro-skills li {
+    @apply w-[300px] ml-[20px] mb-[10px] flex text-gray-500;
+  }
+  .intro-skills li svg {
+    @apply mr-[10px];
+  }
+}
+@keyframes pulse-animation {
+  0% {
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px;
+  }
+  100% {
+    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 20px;
+  }
+}
+
+.pulse {
+  animation-timeline: auto;
+  animation-range-start: normal;
+  animation-range-end: normal;
+  animation: 2s ease 0s infinite normal none running pulse-animation;
+}
+
+.circle {
+  width: 8px;
+  height: 8px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px 1px;
+  border-radius: 50%;
+}
+
+.color-pulse {
+  background: rgb(0, 255, 0);
 }

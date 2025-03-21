@@ -1,4 +1,4 @@
-/*! tailwindcss v4.0.13 | MIT License | https://tailwindcss.com */
+/*! tailwindcss v4.0.15 | MIT License | https://tailwindcss.com */
 @layer theme, base, components, utilities;
 @layer theme {
   :root, :host {
@@ -9,26 +9,18 @@
     --color-gray-300: oklch(0.872 0.01 258.338);
     --color-gray-400: oklch(0.707 0.022 261.325);
     --color-gray-500: oklch(0.551 0.027 264.364);
+    --color-gray-600: oklch(0.446 0.03 256.802);
     --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
     --font-weight-normal: 400;
     --font-weight-medium: 500;
     --radius-2xl: 1rem;
+    --radius-3xl: 1.5rem;
     --default-transition-duration: 150ms;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
-    --default-font-feature-settings: var(--font-sans--font-feature-settings);
-    --default-font-variation-settings: var(
-      --font-sans--font-variation-settings
-    );
     --default-mono-font-family: var(--font-mono);
-    --default-mono-font-feature-settings: var(
-      --font-mono--font-feature-settings
-    );
-    --default-mono-font-variation-settings: var(
-      --font-mono--font-variation-settings
-    );
     --color-gray-theme: #e6eaee;
   }
 }
@@ -43,13 +35,10 @@
     line-height: 1.5;
     -webkit-text-size-adjust: 100%;
     tab-size: 4;
-    font-family: var( --default-font-family, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" );
+    font-family: var(--default-font-family, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");
     font-feature-settings: var(--default-font-feature-settings, normal);
-    font-variation-settings: var( --default-font-variation-settings, normal );
+    font-variation-settings: var(--default-font-variation-settings, normal);
     -webkit-tap-highlight-color: transparent;
-  }
-  body {
-    line-height: inherit;
   }
   hr {
     height: 0;
@@ -73,9 +62,9 @@
     font-weight: bolder;
   }
   code, kbd, samp, pre {
-    font-family: var( --default-mono-font-family, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace );
-    font-feature-settings: var( --default-mono-font-feature-settings, normal );
-    font-variation-settings: var( --default-mono-font-variation-settings, normal );
+    font-family: var(--default-mono-font-family, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace);
+    font-feature-settings: var(--default-mono-font-feature-settings, normal);
+    font-variation-settings: var(--default-mono-font-variation-settings, normal);
     font-size: 1em;
   }
   small {
@@ -139,7 +128,11 @@
   }
   ::placeholder {
     opacity: 1;
-    color: color-mix(in oklab, currentColor 50%, transparent);
+  }
+  @supports (not (-webkit-appearance: -apple-pay-button))  or (contain-intrinsic-size: 1px) {
+    ::placeholder {
+      color: color-mix(in oklab, currentColor 50%, transparent);
+    }
   }
   textarea {
     resize: vertical;
@@ -355,6 +348,194 @@ html {
       padding: calc(var(--spacing) * 0);
     }
   }
+  .intro-container {
+    margin-inline: 90px;
+    display: flex;
+    height: 500px;
+    flex-direction: row;
+    padding-block: 100px;
+  }
+  .intro-namecard {
+    display: flex;
+    height: 650px;
+    width: 475px;
+    flex-direction: column;
+    align-items: center;
+    border-radius: var(--radius-2xl);
+    outline-style: var(--tw-outline-style);
+    outline-width: 1px;
+    outline-color: var(--color-gray-theme);
+    &>.child {
+      font-size: 30px;
+    }
+    &>.child {
+      --tw-font-weight: var(--font-weight-medium);
+      font-weight: var(--font-weight-medium);
+    }
+  }
+  .kane-img {
+    margin-inline: 40px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    display: block;
+    height: 400px;
+    width: 400px;
+    border-radius: var(--radius-2xl);
+    background-image: url(https://kane-portfolio-react.vercel.app/assets/profile-B9KxBwnD.jpg);
+    background-size: cover;
+  }
+  .online-stat {
+    box-sizing: border-box;
+    display: inline-flex;
+    width: 200px;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: var(--radius-3xl);
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+    border-color: var(--color-gray-theme);
+    padding-inline: 15px;
+    padding-block: 5px;
+    &>.available-text {
+      color: var(--color-gray-600);
+    }
+  }
+  .intro-links {
+    margin-top: 20px;
+    display: flex;
+  }
+  .intro-links li {
+    margin-inline: 12px;
+    height: 45px;
+    width: 45px;
+    cursor: pointer;
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+    border-color: var(--color-gray-theme);
+    padding-inline: 12px;
+    padding-block: 10px;
+  }
+  .intro-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .intro-links li a p svg {
+    height: 20px;
+    width: 20px;
+    fill: currentColor;
+    fill: var(--color-gray-500);
+    transition-property: 0.5s;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+    &:is(:where(.group):hover *) {
+      @media (hover: hover) {
+        fill: var(--color-black);
+      }
+    }
+  }
+  .intro-cv {
+    margin-left: 30px;
+    display: flex;
+    flex-direction: column;
+  }
+  .intro-intro {
+    margin-top: 60px;
+    width: 725px;
+    font-size: 55px;
+    line-height: 72px;
+    --tw-font-weight: var(--font-weight-medium);
+    font-weight: var(--font-weight-medium);
+  }
+  .intro-intro span {
+    padding-inline: calc(var(--spacing) * 4);
+    outline-style: var(--tw-outline-style);
+    outline-width: 1px;
+    outline-color: var(--color-gray-theme);
+  }
+  .cv-button {
+    margin-top: 25px;
+    display: flex;
+    width: 175px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-black);
+    padding-block: 20px;
+    outline-style: var(--tw-outline-style);
+    outline-width: 1px;
+    outline-color: var(--color-gray-theme);
+    transition-property: 0.3ms;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-white);
+      }
+    }
+    &>p {
+      color: var(--color-white);
+    }
+    &>p {
+      &:is(:where(.group):hover *) {
+        @media (hover: hover) {
+          color: var(--color-black);
+        }
+      }
+    }
+    &>svg {
+      margin-left: 10px;
+    }
+    &>svg {
+      fill: var(--color-white);
+    }
+    &>svg {
+      &:is(:where(.group):hover *) {
+        @media (hover: hover) {
+          fill: var(--color-black);
+        }
+      }
+    }
+  }
+  .intro-skills {
+    margin-top: 30px;
+    display: flex;
+    width: 750px;
+    flex-wrap: wrap;
+  }
+  .intro-skills li {
+    margin-bottom: 10px;
+    margin-left: 20px;
+    display: flex;
+    width: 300px;
+    color: var(--color-gray-500);
+  }
+  .intro-skills li svg {
+    margin-right: 10px;
+  }
+}
+@keyframes pulse-animation {
+  0% {
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px;
+  }
+  100% {
+    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 20px;
+  }
+}
+.pulse {
+  animation-timeline: auto;
+  animation-range-start: normal;
+  animation-range-end: normal;
+  animation: 2s ease 0s infinite normal none running pulse-animation;
+}
+.circle {
+  width: 8px;
+  height: 8px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px 1px;
+  border-radius: 50%;
+}
+.color-pulse {
+  background: rgb(0, 255, 0);
 }
 @property --tw-font-weight {
   syntax: "*";
@@ -364,4 +545,14 @@ html {
   syntax: "*";
   initial-value: "";
   inherits: false;
+}
+@property --tw-outline-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
 }
