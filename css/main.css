@@ -50,7 +50,7 @@ html {
     @apply after:absolute after:top-[10px] after:inset-y-0 after:right-0 after:w-[6px] after:h-[6px] after:bg-gray-300 after:rounded-full last:m-0 last:p-0;
   }
   .intro-container {
-    @apply flex flex-row h-[500px] py-[100px];
+    @apply flex flex-row h-[650px] my-[100px];
   }
   .intro-namecard {
     @apply w-[475px] h-[650px] outline outline-gray-theme rounded-2xl flex flex-col items-center [&>.child]:text-[30px] [&>.child]:font-medium;
@@ -94,13 +94,34 @@ html {
   .intro-skills li svg {
     @apply mr-[10px];
   }
+  .resume-container {
+    @apply bg-gray-theme py-[100px];
+  }
+  .resume-header {
+    @apply justify-center items-center flex flex-col [&>.pro-resume]:text-[50px] [&>.pro-resume]:mb-[70px] [&>.exp-header]:text-[16px] [&>.exp-header]:uppercase [&>.exp-header]:mb-[10px] [&>.exp-header]:text-gray-500;
+  }
+  .experience-row {
+    @apply flex justify-center flex-row space-x-[30px];
+  }
+  .experience-row ul {
+    @apply outline outline-gray-300 rounded-xl p-[40px] w-[625px] [&>li]:border-b-[1px] [&>li]:border-b-gray-300;
+  }
+  .experience-row ul li {
+    @apply flex mt-[20px];
+  }
+  .experience-row ul li span {
+    @apply w-[50px] h-[50px] bg-white flex justify-center items-center rounded-2xl mr-[20px];
+  }
+  .experience-row ul li div {
+    @apply **:mb-[10px] mb-[20px] even:text-xl even:font-medium [&>.years]:text-[16px] [&>.company]:text-gray-500 [&>.company]:text-[16px];
+  }
 }
 @keyframes pulse-animation {
   0% {
-    @apply shadow-[0_0_rgba(0,0,0,0.2)];
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px;
   }
   100% {
-    @apply shadow-[0_0_0_20px_rgba(0,0,0,0)];
+    box-shadow: rgba(0, 0, 0, 0) 0px 0px 1px 1px;
   }
 }
 
